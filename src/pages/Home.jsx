@@ -17,7 +17,8 @@ import TimelineSection from "../components/core/HomePage/Timeline"
 
 function Home() {
   return (
-    <div>
+    // pure-grey bg added
+    <div className="bg-pure-greys-600">
       {/* Section 1 */}
       <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 text-white">
         {/* Become a Instructor Button */}
@@ -130,7 +131,7 @@ function Home() {
       </div>
 
       {/* Section 2 */}
-      <div className="bg-pure-greys-5 text-richblack-700">
+      <div className="bg-pure-greys-300  text-richblack-700">
         <div className="homepage_bg h-[320px]">
           {/* Explore Full Catagory Section */}
           <div className="mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8">
@@ -182,10 +183,10 @@ function Home() {
         <InstructorSection />
 
         {/* Reviws from Other Learner */}
-        <h1 className="text-center text-4xl font-semibold mt-8">
+        {/* <h1 className="text-center text-4xl font-semibold mt-8">
           Reviews from other learners
         </h1>
-        <ReviewSlider />
+        <ReviewSlider /> */}
       </div>
 
       {/* Footer */}
