@@ -99,6 +99,7 @@ exports.categoryPageDetails = async (req, res) => {
       .sort((a, b) => b.sold - a.sold)
       .slice(0, 10)
 
+      
     res.status(200).json({
       success: true,
       data: {

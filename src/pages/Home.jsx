@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 
 // Image and Video Import
 import Banner from "../assets/Images/banner.mp4"
+// import Banner from "../assets/Images/banner2.mp4"
 // Component Imports
 import Footer from "../components/Common/Footer"
 import ReviewSlider from "../components/Common/ReviewSlider"
@@ -14,6 +15,7 @@ import HighlightText from "../components/core/HomePage/HighlightText"
 import InstructorSection from "../components/core/HomePage/InstructorSection"
 import LearningLanguageSection from "../components/core/HomePage/LearningLanguageSection"
 import TimelineSection from "../components/core/HomePage/Timeline"
+
 
 function Home() {
   return (
@@ -56,9 +58,9 @@ function Home() {
         </div>
 
         {/* Video */}
-        <div className="mx-3 my-7 shadow-[10px_-5px_50px_-5px] shadow-blue-200">
+        <div className="mx-3 my-7 shadow-[10px_-5px_50px_-5px] shadow-blue-200 ">
           <video
-            className="shadow-[20px_20px_rgba(255,255,255)]"
+            className="shadow-[20px_20px_rgba(255,255,255)] rounded-lg"
             muted
             loop
             autoPlay
@@ -159,9 +161,8 @@ function Home() {
             </div>
             <div className="flex flex-col items-start gap-10 lg:w-[40%]">
               <div className="text-[16px]">
-                The modern StudyNotion is the dictates its own terms. Today, to
-                be a competitive specialist requires more than professional
-                skills.
+                The modern StudyZone is the dictates its own terms. Today, to be
+                a competitive specialist requires more than professional skills.
               </div>
               <CTAButton active={true} linkto={"/signup"}>
                 <div className="">Learn More</div>
