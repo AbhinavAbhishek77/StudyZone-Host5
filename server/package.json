@@ -1,7 +1,7 @@
 {
-	"name": "studynotion-backend",
+	"name": "studyzone-backend",
 	"version": "1.0.0",
-	"description": "studynotion-backend",
+	"description": "studyzone-backend",
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
@@ -9,9 +9,9 @@
 		
 	},
 	"keywords": [
-		"studynotion-backend"
+		"studyzone-backend"
 	],
-	"author": "Saikat Mukherjee",
+	"author": "Abhinav Abhishek",
 	"license": "ISC",
 	"dependencies": {
 		"bcrypt": "^5.1.0",
