@@ -1,9 +1,11 @@
 import React from "react"
 
 import FoundingStory from "../assets/Images/FoundingStory.png"
-import BannerImage1 from "../assets/Images/aboutus1.webp"
-import BannerImage2 from "../assets/Images/aboutus2.webp"
-import BannerImage3 from "../assets/Images/aboutus3.webp"
+// import BannerImage1 from "../assets/Images/aboutus1.webp"
+import BannerImage1 from "../assets/Images/about4.jpg"
+// import BannerImage2 from "../assets/Images/aboutus2.webp"
+import BannerImage2 from "../assets/Images/about5.jpg"
+import BannerImage3 from "../assets/Images/about3.jpg"
 import Footer from "../components/Common/Footer"
 import ReviewSlider from "../components/Common/ReviewSlider"
 import ContactFormSection from "../components/core/AboutPage/ContactFormSection"
@@ -36,14 +38,14 @@ const About = () => {
         </div>
       </section>
 
-      <section className="border-b border-richblack-700">
+      <section className="border-b border-richblack-700 bg-richblack-700">
         <div className="mx-auto flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-richblack-500">
           <div className="h-[100px] "></div>
           <Quote />
         </div>
       </section>
 
-      <section>
+      <section className=" bg-richblack-700">
         <div className="mx-auto flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-richblack-500">
           <div className="flex flex-col items-center gap-10 lg:flex-row justify-between">
             <div className="my-24 flex lg:w-[50%] flex-col gap-10">
@@ -103,7 +105,7 @@ const About = () => {
       </section>
 
       <StatsComponenet />
-      <section className="mx-auto mt-20 flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-white">
+      <section className="mx-auto mt-20 flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-white ">
         <LearningGrid />
         <ContactFormSection />
       </section>
