@@ -3,7 +3,8 @@ import { FaArrowRight } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
 // Image and Video Import
-import Banner from "../assets/Images/banner.mp4"
+import Banner from "../assets/Images/Banner10.mp4"
+// import Banner from "../assets/Images/banner1.mp4"
 // import Banner from "../assets/Images/banner2.mp4"
 // Component Imports
 import Footer from "../components/Common/Footer"
