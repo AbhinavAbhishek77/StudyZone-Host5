@@ -229,7 +229,9 @@ console.log('catalog data',subLinks);
   const toggleCatalog = () => {
     setIsCatalogOpen(!isCatalogOpen); // Toggle the catalog dropdown
   };
-
+  const closeCatalog = () => {
+    setIsCatalogOpen(false);
+  };
   return (
     <div>
       <div
@@ -262,6 +264,8 @@ console.log('catalog data',subLinks);
                             : "text-richblack-25"
                         }`}
                         onClick={toggleCatalog} // Toggle dropdown
+                        onMouseEnter={toggleCatalog}
+                        onMouseLeave={closeCatalog}
                       >
                         <p>{link.title}</p>
                         <BsChevronDown />
@@ -269,6 +273,7 @@ console.log('catalog data',subLinks);
                           className={`absolute left-[50%] top-[50%] z-[1000] flex w-[200px] translate-x-[-50%] translate-y-[3em] flex-col rounded-lg bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[300px] ${
                             isCatalogOpen ? "visible opacity-100" : "invisible opacity-0"
                           }`}
+                          onMouseLeave={closeCatalog}
                         >
                           <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-richblack-5"></div>
                           {loading ? (
@@ -288,6 +293,7 @@ console.log('catalog data',subLinks);
                                     className="rounded-lg bg-transparent py-4 pl-4 hover:bg-richblack-50"
                                     key={i}
                                     onClick={toggleMenu} // Close menu after selection
+                                   
                                   >
                                     <p>{subLink.name}</p>
                                   </Link>
