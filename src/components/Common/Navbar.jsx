@@ -233,7 +233,7 @@ console.log('catalog data',subLinks);
     setIsCatalogOpen(false);
   };
   return (
-    <div>
+    <div >
       <div
         className={`flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700 ${
           location.pathname !== "/" ? "bg-richblack-800" : ""
@@ -292,7 +292,8 @@ console.log('catalog data',subLinks);
                                       .toLowerCase()}`}
                                     className="rounded-lg bg-transparent py-4 pl-4 hover:bg-richblack-50"
                                     key={i}
-                                    onClick={toggleMenu} // Close menu after selection
+                                    onClick={toggleMenu && toggleCatalog} // Close menu after selection
+                                    
                                    
                                   >
                                     <p>{subLink.name}</p>
@@ -411,7 +412,8 @@ console.log('catalog data',subLinks);
       )}
 
       {/* Content Push Down */}
-      {isMenuOpen && <div className="h-[300px]" />}
+      {isMenuOpen && <div className="h-[280px]" />}
+      { isMenuOpen && isCatalogOpen && <div className="h-[120px]" />}
     </div>
   );
 }
