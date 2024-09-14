@@ -19,9 +19,9 @@ export default function ViewCourse() {
   const [reviewModal, setReviewModal] = useState(false)
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       const courseData = await getFullDetailsOfCourse(courseId, token)
-      
+
       dispatch(setCourseSectionData(courseData.courseDetails.courseContent))
       dispatch(setEntireCourseData(courseData.courseDetails))
       dispatch(setCompletedLectures(courseData.completedVideos))
@@ -31,7 +31,7 @@ export default function ViewCourse() {
       })
       dispatch(setTotalNoOfLectures(lectures))
     })()
-   
+    // eslint-disable-next-line
   }, [])
 
   return (

@@ -4,19 +4,19 @@ export const HomePageExplore = [
         courses : [
             {
                 heading : "Learn HTML",
-                description : "This course covers the basic concepts of HTML including creating and structuring web pages, adding text, links, images, and more.",
+                description : "Learn the essentials of HTML, from building web pages to adding text, links, images, and more.",
                 level : 'Beginner',
                 lessionNumber : 6
             },
             {
                 heading : "Learn CSS",
-                description : "This course explores advanced topics in HTML5 and CSS3, including animations, transitions, and layout techniques",
+                description : "Explore advanced HTML5 and CSS3 topics, including animations, transitions, and layout techniques.",
                 level : 'Beginner',
                 lessionNumber : 6
             },
             {
-                heading : "Responsive Web design",
-                description : "This course teaches responsive web design techniques, allowing web pages to adapt to different devices and screen sizes",
+                heading : "Learn Responsive Web design",
+                description : "Learn responsive web design techniques to make web pages adapt to any device and screen size.",
                 level : 'Beginner',
                 lessionNumber : 6
             },

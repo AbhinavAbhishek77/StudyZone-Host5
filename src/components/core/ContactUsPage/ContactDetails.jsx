@@ -6,22 +6,22 @@ import * as Icon2 from "react-icons/io5"
 const contactDetails = [
   {
     icon: "HiChatBubbleLeftRight",
-    heading: "Chat on us",
-    description: "Our friendly team is here to help.",
+    heading: "Chat with Us",
+    description: "Got questions? Our team is here to help!",
     details: "123abhinavabhishek@gmail.com",
   },
   {
     icon: "BiWorld",
-    heading: "Visit us",
-    description: "Come and say hello at our office HQ.",
+    heading: "Drop By",
+    description: "We’d love to see you! Visit us at:",
     details:
-      "Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016",
+      "1234 Elm Street Suite 567 Springfield, IL 62704 USA",
   },
   {
     icon: "IoCall",
-    heading: "Call us",
-    description: "Mon - Fri From 8am to 5pm",
-    details: "+123 456 7869",
+    heading: "Give Us a Call",
+    description: "Reach out Monday to Saturday, 9 AM - 7 PM",
+    details: "+987 654 321",
   },
 ]
 
