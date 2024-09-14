@@ -255,7 +255,7 @@ console.log('catalog data',subLinks);
             <ul className="flex gap-x-6 text-richblack-25">
               {NavbarLinks.map((link, index) => (
                 <li key={index}>
-                  {link.title === "Catalog" ? (
+                  {link.title === "Courses" ? (
                     <>
                       <div
                         className={`group relative flex cursor-pointer items-center gap-1 ${
