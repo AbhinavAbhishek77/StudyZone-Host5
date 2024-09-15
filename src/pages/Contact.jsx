@@ -15,7 +15,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="lg:w-[60%]">
+        <div className="lg:w-[60%] bg-richblack-700 p-14 rounded-3xl">
           <ContactForm />
         </div>
       </div>

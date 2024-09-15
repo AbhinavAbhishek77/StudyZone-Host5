@@ -15,9 +15,9 @@ const Resources = [
   "Chart Sheet",
   "Code challenges",
   "Docs",
-  "Projects",
-  "Videos",
-  "Workspaces",
+  // "Projects",
+  // "Videos",
+  // "Workspaces",
 ];
 const Plans = ["Paid memberships", "For students", "Business solutions"];
 const Community = ["Forums", "Chapters", "Events"];
@@ -46,7 +46,7 @@ const Footer = () => {
                   );
                 })}
               </div>
-              <div className="flex gap-3 text-lg">
+              <div className="flex gap-3 text-lg text-richblack-50">
                 <FaFacebook />
                 <FaGoogle />
                 <FaTwitter />
