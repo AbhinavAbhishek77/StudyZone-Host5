@@ -1,5 +1,6 @@
+
 import { useState } from "react"
-import { VscSignOut } from "react-icons/vsc"
+import { VscSignOut, VscChevronLeft, VscChevronRight } from "react-icons/vsc"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
@@ -15,7 +16,11 @@ export default function Sidebar() {
   const { loading: authLoading } = useSelector((state) => state.auth)
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  // to keep track of confirmation modal
+  
+  // State to track if the sidebar is collapsed
+  const [isCollapsed, setIsCollapsed] = useState(false)
+  
+  // State to keep track of confirmation modal
   const [confirmationModal, setConfirmationModal] = useState(null)
 
   if (profileLoading || authLoading) {
@@ -28,20 +33,44 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="flex h-[calc(100vh-3.5rem)] min-w-[220px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10">
+      <div
+        className={`relative flex h-[calc(100vh-3.5rem)] ${isCollapsed ? "w-[80px]" : "w-[220px]"} 
+          flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10 transition-all duration-300`}
+      >
+        {/* Collapse Button */}
+        <button
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          className={`absolute top-4 right-[-15px] p-1 rounded-full bg-richblack-700 text-white shadow-md transition-all duration-300 ${
+            isCollapsed ? "rotate-180" : ""
+          }`}
+        >
+          {isCollapsed ? <VscChevronRight /> : <VscChevronLeft />}
+        </button>
+
+        {/* Sidebar Links */}
         <div className="flex flex-col">
           {sidebarLinks.map((link) => {
             if (link.type && user?.accountType !== link.type) return null
             return (
-              <SidebarLink key={link.id} link={link} iconName={link.icon} />
+              <SidebarLink
+                key={link.id}
+                link={link}
+                iconName={link.icon}
+                isCollapsed={isCollapsed} // Pass collapsed state to the SidebarLink
+              />
             )
           })}
         </div>
+
+        {/* Divider */}
         <div className="mx-auto mt-6 mb-6 h-[1px] w-10/12 bg-richblack-700" />
+
+        {/* Settings and Logout */}
         <div className="flex flex-col">
           <SidebarLink
             link={{ name: "Settings", path: "/dashboard/settings" }}
             iconName="VscSettingsGear"
+            isCollapsed={isCollapsed} // Pass collapsed state to the SidebarLink
           />
           <button
             onClick={() =>
@@ -58,12 +87,15 @@ export default function Sidebar() {
           >
             <div className="flex items-center gap-x-2">
               <VscSignOut className="text-lg" />
-              <span>Logout</span>
+              {!isCollapsed && <span>Logout</span>}
             </div>
           </button>
         </div>
       </div>
+
+      {/* Confirmation Modal */}
       {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
     </>
   )
 }
+

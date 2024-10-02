@@ -1,10 +1,12 @@
+
+import React from "react"
 import * as Icons from "react-icons/vsc"
 import { useDispatch } from "react-redux"
 import { NavLink, matchPath, useLocation } from "react-router-dom"
 
 import { resetCourseState } from "../../../slices/courseSlice"
 
-export default function SidebarLink({ link, iconName }) {
+export default function SidebarLink({ link, iconName, isCollapsed }) {
   const Icon = Icons[iconName]
   const location = useLocation()
   const dispatch = useDispatch()
@@ -29,9 +31,10 @@ export default function SidebarLink({ link, iconName }) {
         }`}
       ></span>
       <div className="flex items-center gap-x-2">
-        {/* Icon Goes Here */}
+        {/* Icon Display */}
         <Icon className="text-lg" />
-        <span>{link.name}</span>
+        {/* Conditionally render the text only when the sidebar is expanded */}
+        {!isCollapsed && <span>{link.name}</span>}
       </div>
     </NavLink>
   )

@@ -1,14 +1,19 @@
+
 import { useEffect, useState } from "react"
 import { BsChevronDown } from "react-icons/bs"
 import { IoIosArrowBack } from "react-icons/io"
 import { useSelector } from "react-redux"
 import { useLocation, useNavigate, useParams } from "react-router-dom"
-
+import ReactStars from "react-rating-stars-component"
+import { createRating } from "../../../services/operations/courseDetailsAPI"
 import IconBtn from "../../Common/IconBtn"
 
-export default function VideoDetailsSidebar({ setReviewModal }) {
+export default function VideoDetailsSidebar() {
   const [activeStatus, setActiveStatus] = useState("")
   const [videoBarActive, setVideoBarActive] = useState("")
+  const [rating, setRating] = useState(0)
+  const [loading, setLoading] = useState(false)
+
   const navigate = useNavigate()
   const location = useLocation()
   const { sectionId, subSectionId } = useParams()
@@ -18,6 +23,7 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
     totalNoOfLectures,
     completedLectures,
   } = useSelector((state) => state.viewCourse)
+  const { token } = useSelector((state) => state.auth)
 
   useEffect(() => {
     ;(() => {
@@ -38,6 +44,21 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courseSectionData, courseEntireData, location.pathname])
 
+  const handleRatingSubmit = async () => {
+    if (rating === 0) return
+
+    setLoading(true)
+    await createRating(
+      {
+        courseId: courseEntireData._id,
+        rating: rating,
+      },
+      token
+    )
+    setLoading(false)
+    alert("Rating submitted successfully!")
+  }
+
   return (
     <>
       <div className="flex h-[calc(100vh-3.5rem)] w-[320px] max-w-[350px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800">
@@ -52,11 +73,6 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
             >
               <IoIosArrowBack size={30} />
             </div>
-            <IconBtn
-              text="Add Review"
-              customClasses="ml-auto"
-              onclick={() => setReviewModal(true)}
-            />
           </div>
           <div className="flex flex-col">
             <p>{courseEntireData?.courseName}</p>
@@ -64,6 +80,26 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
               {completedLectures?.length} / {totalNoOfLectures}
             </p>
           </div>
+
+          {/* Rating System */}
+          <div className="flex items-center gap-2">
+            <p className="text-sm font-semibold text-richblack-500">
+              Rate the Course:
+            </p>
+            <ReactStars
+              count={5}
+              onChange={(newRating) => setRating(newRating)}
+              size={24}
+              activeColor="#ffd700"
+              value={rating}
+            />
+          </div>
+          <IconBtn
+            text={loading ? "Submitting..." : "Submit Rating"}
+            customClasses="mt-2"
+            onclick={handleRatingSubmit}
+            disabled={loading}
+          />
         </div>
 
         <div className="h-[calc(100vh - 5rem)] overflow-y-auto">
@@ -79,9 +115,6 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
                   {course?.sectionName}
                 </div>
                 <div className="flex items-center gap-3">
-                  {/* <span className="text-[12px] font-medium">
-                    Lession {course?.subSection.length}
-                  </span> */}
                   <span
                     className={`${
                       activeStatus === course?.sectionName

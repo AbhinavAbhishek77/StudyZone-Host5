@@ -7,7 +7,7 @@ import Banner from "../assets/Images/Banner10.mp4"
 
 // Component Imports
 import Footer from "../components/Common/Footer"
-// import ReviewSlider from "../components/Common/ReviewSlider"
+
 import CTAButton from "../components/core/HomePage/Button"
 import CodeBlocks from "../components/core/HomePage/CodeBlocks"
 import ExploreMore from "../components/core/HomePage/ExploreMore"
@@ -141,14 +141,7 @@ function Home() {
 
       {/* Section 3 */}
       <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 bg-richblack-900 text-white">
-        {/* Become a instructor section */}
-        {/* <InstructorSection /> */}
-
-        {/* Reviws from Other Learner */}
-        {/* <h1 className="text-center text-4xl font-semibold mt-8">
-          Reviews from other learners
-        </h1>
-        <ReviewSlider /> */}
+    
       </div>
 
       {/* Footer */}
