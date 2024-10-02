@@ -34,7 +34,7 @@ export default function Sidebar() {
   return (
     <>
       <div
-        className={`relative flex h-[calc(100vh-3.5rem)] ${isCollapsed ? "w-[80px]" : "w-[220px]"} 
+        className={`relative flex h-[calc(100vh-3.5rem)] ${isCollapsed ? "w-[80px]" : "w-[135px]"} 
           flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10 transition-all duration-300`}
       >
         {/* Collapse Button */}
@@ -98,4 +98,5 @@ export default function Sidebar() {
     </>
   )
 }
+
 
