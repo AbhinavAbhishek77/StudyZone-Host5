@@ -9,7 +9,7 @@ const {
   getEnrolledCourses,
   instructorDashboard,
 } = require("../controllers/profile")
-
+// When a POST request is made to this route, the resetPasswordToken function (imported from the controller) will be executed to handle the request.
 //                                      Profile routes
 // Delet User Account
 router.delete("/deleteProfile", auth, deleteAccount)
