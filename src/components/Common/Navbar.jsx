@@ -477,7 +477,7 @@ function Navbar() {
 
       {/* Content Push Down */}
       {isMenuOpen && <div className="h-[0px]" />}
-      {isMenuOpen && isCatalogOpen && <div className="h-[120px]" />}
+      {isMenuOpen && isCatalogOpen && <div className="h-[0px]" />}
     </div>
   );
 }
