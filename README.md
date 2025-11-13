@@ -45,5 +45,3 @@ StudyZone is a full-stack EdTech platform built with the MERN stack. It helps st
 
 ---
 
-## 📂 Folder Structure (Overview)
-
