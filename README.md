@@ -1,5 +1,8 @@
 # ⭐ StudyZone – An EdTech Platform
 
+### 🔗 Live Website  
+**https://studyzone-edtech-project10.vercel.app/**
+
 StudyZone is a full-stack EdTech platform built with the MERN stack. It helps students and instructors learn, teach, and share resources in a simple and organized way. The platform supports secure authentication, smooth course management, and an interface that’s easy to use for everyone.
 
 ---
